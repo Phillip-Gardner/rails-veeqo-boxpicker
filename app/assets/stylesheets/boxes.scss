@@ -1,8 +1,10 @@
 // Place all the styles related to the boxes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "shared"
+
 .main-container {
-  margin: 40px 80px;
+  margin: 40px 40px;
  font-family: "Open Sans", Geneva, sans-serif;
 }
 
@@ -14,18 +16,46 @@
 
 .to-pack-container {
   height: 20vh;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .to-pack-order {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #000000;
 }
 
-to-pack-item {
+.to-pack-item {
   display: flex;
   justify-content: flex-start;
+}
+
+p {
+  font-size: 12px;
+}
+
+.tick-btn {
+  color: white;
+  background-color: green;
+  border: 0.5px solid #4A4A4A;
+  padding: 8px 12px;
+  border-radius: 3px;
+  opacity: 0.8;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.tick-btn:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .main-container {
+    margin: 20px 20px;
+  }
+
+  .main_heading {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 11px;
+  }
 }
