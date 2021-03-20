@@ -1,21 +1,18 @@
 <h1>Boxes Home </h1>
 
 <% @orders.each do |order| %>
-  <P><%= order.id %></p>
+  <P><%= order.number %></p>
     <% if order.line_items == nil %>
       <p> there are no items </p>
     <% else %>
       <% order.line_items.each do |item| %>
         <%= item[:sellable][:product_title] %>
-        <%= @height = item[:sellable][:measurement_attributes][:height] %>
+        <%= item[:sellable][:measurement_attributes][:height] %>
         <%= item[:sellable][:measurement_attributes][:width] %>
         <%= item[:sellable][:measurement_attributes][:depth] %>
     <% end %>
   <% end %>
 <% end %>
-
-
-
 
 
 
