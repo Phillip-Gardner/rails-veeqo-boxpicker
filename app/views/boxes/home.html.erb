@@ -18,12 +18,13 @@
                 <p><% a = item[:sellable][:measurement_attributes][:height] %></p>
                 <p><% b = item[:sellable][:measurement_attributes][:width] %></p>
                 <p><% c = item[:sellable][:measurement_attributes][:depth] %></p>
-                <!-- <p><%= item[:quantity] %> -->
-                <% items << { :dimension => [a,b,c]} %>
+                <% item[:quantity].times do %>
+                  <% items << { :dimensions => [a,b,c]}  %>
+                  <% end %>
                 <%= items %>
             <% end %>
-            <%# container = EasyBoxPacker.find_smallest_container(items: items) %>
-            <h2> <%#= container %></h2>
+            <% container = EasyBoxPacker.find_smallest_container(items: items) %>
+            <h2> <%= container %></h2>
 
             <a class="tick-btn" href="#">✓</a>
           </div>
