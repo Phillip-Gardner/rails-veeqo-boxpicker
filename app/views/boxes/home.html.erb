@@ -1,0 +1,32 @@
+<h1>Boxes Home </h1>
+
+<% @orders.each do |order| %>
+  <P><%= order.number %></p>
+    <% if order.line_items == nil %>
+      <p> there are no items </p>
+    <% else %>
+      <% order.line_items.each do |item| %>
+        <%= item[:sellable][:product_title] %>
+        <%= item[:sellable][:measurement_attributes][:height] %>
+        <%= item[:sellable][:measurement_attributes][:width] %>
+        <%= item[:sellable][:measurement_attributes][:depth] %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+<!-- <script>
+fetch("/notifications.json")
+  .then(response => response.json())
+    .then(data => {
+      let counter = 0
+      data.forEach(notification => {
+      const element = `<a class="dropdown-item" data-remote="true" rel="nofollow" data-method="post" href="/notifications/${notification.id}/mark_as_read">${notification.actor} ${notification.action}<i class="fas fa-times-circle"></i></a>`
+      document.getElementById("navbar-dropdown-text").insertAdjacentHTML("beforeend", element)
+      counter += 1
+      })
+      const counterHTML =  `<h3>${counter}</h3>`
+      document.getElementById("dropdown-heading").insertAdjacentHTML("beforeend", counterHTML)
+    })
+</script> -->
