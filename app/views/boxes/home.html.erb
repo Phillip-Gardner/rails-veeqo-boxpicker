@@ -12,13 +12,18 @@
             <h2> there are no items </h2>
           <% else %>
           <div class="to-pack-item">
+            <% items = [] %>
               <% order.line_items.each do |item| %>
                 <p><%= item[:sellable][:product_title] %></p>
-                <p><%= item[:sellable][:measurement_attributes][:height] %></p>
-                <p><%= item[:sellable][:measurement_attributes][:width] %></p>
-                <p><%= item[:sellable][:measurement_attributes][:depth] %></p>
-                <p><%= item[:quantity] %>
+                <p><% a = item[:sellable][:measurement_attributes][:height] %></p>
+                <p><% b = item[:sellable][:measurement_attributes][:width] %></p>
+                <p><% c = item[:sellable][:measurement_attributes][:depth] %></p>
+                <!-- <p><%= item[:quantity] %> -->
+                <% items << { :dimension => [a,b,c]} %>
             <% end %>
+            <% container = EasyBoxPacker.find_smallest_container(items: items) %>
+            <h2> <%= container %></h2>
+
             <a class="tick-btn" href="#">✓</a>
           </div>
         <% end %>
@@ -29,7 +34,21 @@
 </div>
 
 
+<!--     items = []
+    # x = order.line_items[:quantity]
+    # x.times do
+    order.line_items.each do |item|
+    a = item[:sellable][:measurement_attributes][:height]
+    b = item[:sellable][:measurement_attributes][:width]
+    c = item[:sellable][:measurement_attributes][:depth]
+    items << {dimensions => [a,b,c]}
+    end
+    container = EasyBoxPacker.find_smallest_container( items )
+    @container = container
+  end
+ -->
 
+<h3><%=container%></h3>
 
 
   <script type="text/javascript">
