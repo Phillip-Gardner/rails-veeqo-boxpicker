@@ -1,4 +1,4 @@
-  require 'veeqo'
+require 'veeqo'
 
 class ApplicationController < ActionController::Base
   Veeqo.configure do |config|

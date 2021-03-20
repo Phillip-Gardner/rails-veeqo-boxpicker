@@ -1,3 +1,31 @@
 // Place all the styles related to the boxes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.main-container {
+  margin: 40px 80px;
+ font-family: "Open Sans", Geneva, sans-serif;
+}
+
+.main-heading {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.to-pack-container {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-pack-order {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+}
+
+to-pack-item {
+  display: flex;
+  justify-content: flex-start;
+}
