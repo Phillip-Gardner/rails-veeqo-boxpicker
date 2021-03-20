@@ -1,20 +1,34 @@
-<h1>Boxes Home </h1>
+<div class="main-container">
+  <div class ="main-heading">
+      <h2> PickPack </h2>
+  </div>
 
-<% @orders.each do |order| %>
-  <P><%= order.number %></p>
-    <% if order.line_items == nil %>
-      <p> there are no items </p>
-    <% else %>
-      <% order.line_items.each do |item| %>
-        <%= item[:sellable][:product_title] %>
-        <%= item[:sellable][:measurement_attributes] %>
-        <%= item[:sellable][:measurement_attributes][:width] %>
-        <%= item[:sellable][:measurement_attributes][:depth] %>
-        <%= item[:quantity] %>
-    <% end %>
-  <% end %>
-<% end %>
-<button id="click">Hello</button>
+  <div class="to-pack-container">
+      <h2>Orders to Pack</h2>
+    <div class="to-pack-order">
+      <% @orders.each do |order| %>
+        <h2>Order #<%= order.number %></h2>
+          <% if order.line_items == nil %>
+            <h2> there are no items </h2>
+          <% else %>
+          <div class="to-pack-item">
+              <% order.line_items.each do |item| %>
+                <p><%= item[:sellable][:product_title] %></p>
+                <p><%= item[:sellable][:measurement_attributes][:height] %></p>
+                <p><%= item[:sellable][:measurement_attributes][:width] %></p>
+                <p><%= item[:sellable][:measurement_attributes][:depth] %></p>
+                <p><%= item[:quantity] %>
+            <% end %>
+            <a class="tick-btn" href="#">✓</a>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <button id="click">Hello</button>
+  </div>
+</div>
+
+
 
 
 
