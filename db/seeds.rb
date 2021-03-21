@@ -12,7 +12,7 @@ Box.destroy_all
 puts "creating boxes"
 
 require 'csv'
-boxes     = []
+boxes = []
 csv_options = { headers: :first_row, header_converters: :symbol }
 CSV.foreach("#{Rails.root}/lib/seeds/type_of_pack.csv", csv_options) do |row|
   row[:package] = row[:package]

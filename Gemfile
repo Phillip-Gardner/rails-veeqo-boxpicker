@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # env gems
 gem 'dotenv-rails'
 
+# gem easy box packer
+
+gem 'easy-box-packer'
+
 # Veeqo Gem!
 gem 'veeqo_api_ruby'
 
