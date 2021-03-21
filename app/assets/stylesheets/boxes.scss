@@ -8,6 +8,11 @@
  font-family: "Open Sans", Geneva, sans-serif;
 }
 
+li {
+  list-style-type: none;
+  margin: 20px 10px;
+}
+
 .main-heading {
   display: flex;
   justify-content: center;

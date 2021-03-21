@@ -3,6 +3,9 @@ class BoxesController < ApplicationController
     @orders = Veeqo::Order.all
   end
 
+  def learnings
+  end
+
   # def find_the_box
   # @orders.each do |order|
   #   items = []
